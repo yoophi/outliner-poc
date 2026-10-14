@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600&display=swap');
+
+:root { font-family: 'Noto Sans KR', sans-serif; color: #343c33; background: #f7f5ef; font-synthesis: none; --accent: #697c53; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.workspace { min-height: 100dvh; padding: 0 5vw 110px; }
+.app-header { height: 92px; display: flex; align-items: center; border-bottom: 1px solid #dedfd5; gap: 24px; }
+.wordmark { font-family: 'Gowun Batang', serif; font-size: 27px; font-weight: 700; text-decoration: none; color: #344735; letter-spacing: -2px; }
+.brand-mark { padding-left: 9px; color: var(--accent); font-size: 24px; }
+.edition { font-size: 10px; letter-spacing: 2px; color: #8a9084; }
+.session-indicator { margin-left: auto; font-size: 11px; color: #737c6d; display: flex; align-items: center; gap: 8px; }
+.session-indicator i { width: 5px; height: 5px; border-radius: 50%; background: #819364; }
+main { max-width: 800px; margin: 0 auto; }
+.document-heading { padding: 72px 18px 38px; }
+.eyebrow { color: #8a937c; font-size: 10px; letter-spacing: 2.4px; }
+h1 { font-family: 'Gowun Batang', serif; font-size: 44px; font-weight: 400; letter-spacing: -2px; margin: 16px 0 12px; }
+.document-heading p { color: #8a9083; font-size: 13px; margin: 0; }
+.editor { padding: 24px 0 28px; border-top: 1px solid #d9dccf; }
+.outline-row { display: flex; align-items: flex-start; position: relative; padding: 7px 14px 7px calc(12px + var(--depth) * 26px); min-height: 43px; border-radius: 4px; }
+.outline-row.is-active { background: #e9ecdf; }
+.outline-row:hover:not(.is-active) { background: #efeee6; }
+.outline-row::before { content: ''; position: absolute; left: calc(13px + var(--depth) * 26px); top: 0; bottom: 0; border-left: 1px solid #dcdfd2; opacity: min(var(--depth), 1); }
+.node-gutter { width: 26px; min-width: 26px; height: 28px; display: flex; align-items: center; justify-content: center; z-index: 1; }
+.node-dot { width: 4px; height: 4px; border-radius: 50%; background: #a0a892; }
+.fold-toggle { border: 0; background: transparent; color: #768669; width: 26px; height: 28px; display: grid; place-items: center; padding: 5px; border-radius: 3px; }
+.fold-toggle:hover { background: #d9dfcc; color: #3f5735; }
+.fold-toggle svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.4; transition: transform 140ms ease; }
+.fold-toggle.is-folded svg { transform: rotate(-90deg); }
+textarea { background: transparent; border: 0; resize: none; overflow: hidden; color: inherit; outline: none; width: 100%; min-width: 0; line-height: 28px; min-height: 28px; padding: 0 4px; margin: 0; font-size: 15px; letter-spacing: -.25px; caret-color: #3e653a; border-radius: 0; }
+textarea::placeholder { color: #a2a997; }
+textarea::selection { background: #cddabc; }
+.fold-count { border: 1px solid #d1d8c6; border-radius: 4px; font-size: 10px; color: #7b896b; background: transparent; padding: 1px 6px; margin: 4px 0 0 9px; }
+.add-item { background: transparent; border: 0; color: #949c87; font-size: 12px; margin: 18px 0 0 19px; padding: 6px; display: flex; align-items: center; gap: 10px; }
+.add-item:hover { color: #3e653a; }
+.add-item span { font-size: 20px; font-weight: 400; }
+.editor-footer { border-top: 1px solid #dedfd5; padding: 17px 18px; display: flex; justify-content: space-between; gap: 12px; font-size: 10px; color: #8c9384; }
+.count-divider { margin: 0 9px; color: #c0c4b7; }
+.keyboard-guide { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px 30px; margin: 45px auto 0; color: #8c9384; font-size: 11px; }
+.keyboard-guide > span { display: inline-flex; gap: 5px; align-items: center; }
+kbd { font-family: inherit; font-size: 10px; border: 1px solid #dedfd5; border-radius: 4px; padding: 3px 6px; color: #6d7763; background: #f2f1e9; }
+@media (max-width: 600px) { .workspace { padding: 0 20px 60px; } .app-header { height: 72px; gap: 18px; } .edition { font-size: 8px; letter-spacing: 1px; } .document-heading { padding: 48px 8px 30px; } h1 { font-size: 36px; } .outline-row { padding-left: calc(2px + var(--depth) * 18px); padding-right: 4px; } .outline-row::before { left: calc(3px + var(--depth) * 18px); } textarea { font-size: 14px; } .editor-footer { padding: 16px 6px; } .keyboard-guide { gap: 12px 18px; } }
+@media (prefers-reduced-motion: reduce) { .fold-toggle svg { transition: none; } }
